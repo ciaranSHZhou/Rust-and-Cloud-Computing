@@ -2,7 +2,9 @@
 
 Too run, input following command:<br />
 $` cargo run -- play -q <QUOTE TYPE>`<br />
+<br />
 Current quote type includes: "motivational", "lie", and "sad".
+<br />
 For example,<br />
 $` cargo run -- play -q "motivational"`
 
