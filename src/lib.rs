@@ -6,7 +6,7 @@ pub fn quote_of_the_day(quote_type: &str) -> String {
             "The only peole who will know are the people who keep moving forward. - Eren Yeager"
         }
         "sad" => "We'll never amount to anything. Not you, not I. - Hawkwood the Deserter",
-        "lie" => "You are awesome!",
+        "lie" => "You are awesome! - Who",
         _ => "No quote of the day",
     };
 
