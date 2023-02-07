@@ -1,18 +1,21 @@
-## Ciaran- Project 1: Rust CLI with Quote of the Day
+# Rust CLI: Stock Price
+## Description
+In this project, I explopred, in Rust, how to
+* Make API query
+* Integrate the API query into CLI
 
-Too run, input following command:<br />
-$` cargo run -- play -q <QUOTE TYPE>`<br />
-<br />
-Current quote type includes: "motivational", "lie", and "sad".
-<br />
-For example,<br />
-$` cargo run -- play -name "motivational"`
+## Developer Guide
+Build the project: `make format` and `make lint`
 
-
-
-For help<br />
+Run the project: Too run, input following command:  
+$` cargo run -- play -n <STOCK TICKER >`  
+For example,  
+$` cargo run -- play -n "MSFT"`  
+For help  
 `cargo run -- --help`
 
+## Language
+Rust
 
 ## References
 
