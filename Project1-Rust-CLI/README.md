@@ -6,7 +6,7 @@ $` cargo run -- play -q <QUOTE TYPE>`<br />
 Current quote type includes: "motivational", "lie", and "sad".
 <br />
 For example,<br />
-$` cargo run -- play -q "motivational"`
+$` cargo run -- play -name "motivational"`
 
 
 

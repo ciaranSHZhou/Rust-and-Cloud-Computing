@@ -16,17 +16,17 @@ enum Commands {
     #[clap(version = "1.0", author = "Ciaran Zhou")]
     Play {
         #[clap(short, long)]
-        quote_type: String,
+        name: String,
     },
 }
 // create the main function
 fn main() {
     let args = Cli::parse();
     match args.command {
-        Some(Commands::Play { quote_type }) => {
-            let result = quote_of_the_day::quote_of_the_day(&quote_type);
-            println!("{}", result);
-        }
+        Some(Commands::Play { name }) => match get_stock_price::get_stock_price(&name) {
+            Ok(price) => println!("The stock price is: {}", price),
+            Err(error) => println!("An error occurred: {}", error),
+        },
         None => println!("No subcommand was used"),
     }
 }
