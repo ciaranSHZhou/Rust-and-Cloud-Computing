@@ -4,7 +4,7 @@ use clap::Parser;
 #[clap(
     version = "1.0",
     author = "Ciaran Zhou",
-    about = "Guess the number game"
+    about = "Stcok price checker"
 )]
 struct Cli {
     #[clap(subcommand)]
