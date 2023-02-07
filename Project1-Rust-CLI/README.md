@@ -5,13 +5,14 @@ In this project, I explopred, in Rust, how to
 * Integrate the API query into CLI
 
 ## Developer Guide
-Build the project: `make format` and `make lint`
+ * $`make format` to format code  
+ * $`make lint` to lint  
 
-Run the project: Too run, input following command:  
+* Too run, input following command:  
 $` cargo run -- play -n <STOCK TICKER >`  
 For example,  
 $` cargo run -- play -n "MSFT"`  
-For help  
+* For help  
 `cargo run -- --help`
 
 ## Language
