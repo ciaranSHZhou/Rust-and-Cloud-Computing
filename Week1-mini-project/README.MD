@@ -1,15 +1,20 @@
-## Ciaran- Demo 1: Guess the Number!!!
-Rust  exercise<br />
-Too run, input following command:<br />
-$` cargo run -- play --name "[YOURNAME]"`<br />
-For example,<br />
-$`code$ cargo run -- play --name "Joe"`
+# Rust CLI: Guess the number
+## Description
+Rust CLI exercise that runs a "Guess the Number" game  
 
+## Developer Guide
+ * $`make format` to format code  
+ * $`make lint` to lint  
 
-
-For help<br />
+* Too run, input following command:  
+$` cargo run -- play --name "[YOURNAME]"  
+For example,  
+$`code$ cargo run -- play --name "Joe"` 
+* For help  
 `cargo run -- --help`
 
+## Language
+Rust
 
 ## References
 

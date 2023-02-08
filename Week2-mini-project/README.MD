@@ -1,5 +1,13 @@
-# Palindrome or Not
-Check whether input word is a palindrome.
+# Rust exercise: Palindrome or Not
+## Description
+Rust exercise: heck whether input word is a palindrome.
+
+## Developer Guide
+ * $`make format` to format code  
+ * $`make lint` to lint  
+
+## Language
+Rust
 
 ## References
 
