@@ -1,5 +1,14 @@
-# rust-new-project-template
-A good starting point for a new Rust project
+# Rust exercise: Text Line deduplicator
+## Description
+Rust exercise: check and print which lines in a .txt file have duplicates
+
+## Developer Guide
+ * $`make format` to format code  
+ * $`make lint` to lint  
+* $`cargo run` to run
+
+## Language
+Rust
 
 ## References
 
