@@ -3,10 +3,10 @@ install:
 		cargo build -j 1
 
 build:
-	docker build -t fruit .
+	docker build -t kanye .
 
 rundocker:
-	docker run -it --rm -p 8080:8080 fruit
+	docker run -it --rm -p 8080:8080 kanye
 
 format:
 	cargo fmt --quiet
