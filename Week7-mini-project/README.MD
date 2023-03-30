@@ -1,11 +1,10 @@
-# Rust exercise: Palindrome or Not
-## Description
-Rust exercise: heck whether input word is a palindrome.
+# Rust exercise: Random Password Generator
 
 ## Developer Guide
  * $`make format` to format code  
  * $`make lint` to lint  
-
+ * $`cargo run` to run 
+ 
 ## Language
 Rust
 

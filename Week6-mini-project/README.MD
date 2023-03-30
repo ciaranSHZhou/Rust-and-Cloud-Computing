@@ -5,7 +5,7 @@ Rust exercise: count the number of words in a .txt file.
 ## Developer Guide
  * $`make format` to format code  
  * $`make lint` to lint  
-* $`cargo run` to run
+ * $`cargo run` to run
 
 ## Language
 Rust
