@@ -1,4 +1,4 @@
-# Rust exercise: Random Password Generator
+# rust-bert : English to French Translator
 
 ## Developer Guide
  * $`make format` to format code  
