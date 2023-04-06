@@ -1,34 +1,32 @@
-use rust_nlp::Stemmer;
 use lambda_runtime::{run, service_fn, Error, LambdaEvent};
+use rust_bert::pipelines::translation::{Language, TranslationModelBuilder};
 
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize)]
 struct Request {
-    theme: String,
+    sentence: String,
 }
 
 #[derive(Serialize)]
 struct Response {
     req_id: String,
-    msg: String,
+    msg: std::vec::Vec<String>,
 }
 
 async fn function_handler(event: LambdaEvent<Request>) -> Result<Response, Error> {
     // Extract some useful info from the request
-    let theme = event.payload.theme;
-    let quote = match theme.as_str() {
-        "motivational" => {
-            "The only peole who will know are the people who keep moving forward. - Eren Yeager"
-        }
-        "sad" => "We'll never amount to anything. Not you, not I. - Hawkwood the Deserter",
-        "lie" => "You are awesome! - Who",
-        _ => "No quote of the day for you",
-    };
+    let sentence = event.payload.sentence;
+    let model = TranslationModelBuilder::new()
+        .with_source_languages(vec![Language::English])
+        .with_target_languages(vec![Language::Spanish, Language::French, Language::Italian])
+        .create_model()?;
+    // Ask the user for a sentence to translate
+    let output = model.translate(&[sentence], None, Language::French)?;
     // Prepare the response
     let resp = Response {
         req_id: event.context.request_id,
-        msg: format!("Theme {theme}: {quote}"),
+        msg: output,
     };
 
     // Return `Response` (it will be serialized to JSON automatically by the runtime)
