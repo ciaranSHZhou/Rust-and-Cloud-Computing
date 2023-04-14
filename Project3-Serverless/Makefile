@@ -14,7 +14,7 @@ deploy:
 
 invoke:
 	cargo lambda invoke --remote \
-  		--data-ascii '{"theme": "sad"}' \
+  		--data-ascii '{"sentence": "dog"}' \
   		--output-format json \
   		quote-of-the-day
 
