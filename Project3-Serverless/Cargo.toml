@@ -1,5 +1,5 @@
 [package]
-name = "translator"
+name = "Sentiment"
 version = "0.1.0"
 edition = "2021"
 
@@ -16,12 +16,11 @@ edition = "2021"
 
 [dependencies]
 
-lambda_runtime = "0.7"
+lambda_runtime = "0.8"
 serde = "1.0.136"
 tokio = { version = "1", features = ["macros"] }
 tracing = { version = "0.1", features = ["log"] }
 tracing-subscriber = { version = "0.3", default-features = false, features = ["fmt"] }
 rust-bert = "0.20.0"
-anyhow = "1.0.70"
 
 

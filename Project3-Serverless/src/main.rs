@@ -1,6 +1,5 @@
 use lambda_runtime::{run, service_fn, Error, LambdaEvent};
-use rust_bert::pipelines::translation::{Language, TranslationModelBuilder};
-
+use rust_bert::pipelines::sentiment::SentimentModel;
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize)]
@@ -11,22 +10,27 @@ struct Request {
 #[derive(Serialize)]
 struct Response {
     req_id: String,
-    msg: std::vec::Vec<String>,
+    msg: String,
 }
 
 async fn function_handler(event: LambdaEvent<Request>) -> Result<Response, Error> {
     // Extract some useful info from the request
     let sentence = event.payload.sentence;
-    let model = TranslationModelBuilder::new()
-        .with_source_languages(vec![Language::English])
-        .with_target_languages(vec![Language::Spanish, Language::French, Language::Italian])
-        .create_model()?;
-    // Ask the user for a sentence to translate
-    let output = model.translate(&[sentence], None, Language::French)?;
-    // Prepare the response
+    //Create an array and put sentence to it
+    let sentence: [&str; 1] = [sentence.as_str()];
+    let sentiment_model = SentimentModel::new(Default::default())?;
+    
+    let output = sentiment_model.predict(sentence);// Prepare the response
+    // define output_string and append each sentiment as string to it
+    let mut output_string = String::new();
+    for sentiment in output {
+        output_string.push_str(&format!("{:?}", sentiment));
+    }
+
+ 
     let resp = Response {
         req_id: event.context.request_id,
-        msg: output,
+        msg: output_string,
     };
 
     // Return `Response` (it will be serialized to JSON automatically by the runtime)
