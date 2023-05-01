@@ -1,7 +1,7 @@
-# Rust exercise: Rust-Bert Sentiment Analysis
+# Rust exercise: VADER Sentiment Analysis
 
 ## Introduction  
-This program utilize VADER (Valence Aware Dictionary and sEntiment Reasoner)  to analyze the sentiment of sentences
+This program utilize VADER (Valence Aware Dictionary and SEntiment Reasoner)  to analyze the sentiment of sentences
 
 
 
